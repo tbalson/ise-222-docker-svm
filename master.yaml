@@ -1,0 +1,97 @@
+openapi: 3.0.0
+info:
+  version: "1.0.0"
+  title: Lab6 SVM in an API
+  description: A simple service to perform SVM on the IRIS dataset
+  termsOfService: 'http://swagger.io/terms/'
+  contact:
+    name: REST Service SVM Example
+  license:
+    name: Apache
+paths:
+  /data/output/<output>:
+    get:
+      tags:
+        - DATA
+      operationId: data.download
+      description: Downloads data from url
+      responses:
+        '200':
+          description: Data info
+          content:
+            application/json:
+              schema: {}
+  /partition/<filename>/ratio/<ratio>:
+    get:
+      tags:
+        - PARTITION
+      operationId: partition.partition
+      description: Split up downloaded data
+      responses:
+        '200':
+          description: Split data into test and train sets
+          content:
+            application/json:
+              schema: {}
+  /test/get/data:
+    get:
+      tags:
+        - TEST
+      operationId: testdata.gettestdata
+      description: get test data
+      responses:
+        '200':
+          description: test data
+          content:
+            application/json:
+              schema: {}
+  /train/get/data:
+    get:
+      tags:
+        - TRAIN
+      operationId: traindata.gettraindata
+      description: get test data
+      responses:
+        '200':
+          description: train data
+          content:
+            application/json:
+              schema: {}
+  /experiment/svm:
+    get:
+      tags:
+        - SVM
+      operationId: svm.svm
+      description: perform svm
+      responses:
+        '200':
+          description: perform svm
+          content:
+            application/json:
+              schema: {}
+  /experiment/svc/iris/C/<arg1>/kernel/<arg2>:
+    get:
+      tags:
+        - SVC
+      operationId: svm.iris_svm
+      description: perform svc
+      responses:
+        '200':
+          description: perform svm
+          content:
+            application/json:
+              schema: {}
+  /experiment/svc/iris/C/<arg1>/kernel/<arg2>/genfig/norm/<norm1>:
+    get:
+      tags:
+        - SVC
+      operationId: svm.gen_cof_mat
+      description: display confusion matrix
+      responses:
+        '200':
+          description: same plot
+          content:
+            application/json:
+              schema: {}
+servers:
+  - url: 'http://localhost:8080/lab8'
