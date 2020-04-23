@@ -24,7 +24,7 @@ RUN python get-pip.py
 RUN pip install -U pip setuptools
 RUN pip install psutil
 
-RUN git clone https://github.com/tbalson/ise-222-docker-labs.git 
+RUN git clone https://github.com/tbalson/ise-222-docker-svm.git 
 
 WORKDIR ise-222-docker-labs/
 
