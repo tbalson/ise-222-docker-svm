@@ -24,14 +24,13 @@ RUN python get-pip.py
 RUN pip install -U pip setuptools
 RUN pip install psutil
 
-RUN git clone https://github.com/tbalson/ise-222-docker-svm.git 
+RUN git clone https://github.com/tbalson/ise-222-docker-svm.git
 
-WORKDIR ise-222-docker-labs/
+WORKDIR ise-222-docker-svm/
 
 RUN git pull
 
 EXPOSE 8080
 
-RUN pip install -r requirements.txt
-
 CMD ["make", "start"]
+#CMD ["bash"]

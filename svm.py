@@ -1,6 +1,6 @@
 import requests
 import numpy as np
-from sklearn.externals.joblib import Memory
+from joblib import Memory
 from sklearn import datasets, svm
 from sklearn.datasets import load_svmlight_file
 from sklearn.svm import SVC

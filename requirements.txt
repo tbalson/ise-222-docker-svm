@@ -18,10 +18,10 @@ openapi-spec-validator==0.2.8
 pyrsistent==0.16.0
 PyYAML==5.3.1
 requests==2.23.0
-scikit-learn==0.22.2.post1
+scikit-learn
 scipy==1.4.1
 six==1.14.0
-sklearn==0.0
+sklearn
 urllib3==1.25.8
 Werkzeug==1.0.1
 zipp==3.1.0
