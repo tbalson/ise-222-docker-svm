@@ -9,66 +9,6 @@ info:
   license:
     name: Apache
 paths:
-  /data/output/<output>:
-    get:
-      tags:
-        - DATA
-      operationId: data.download
-      description: Downloads data from url
-      responses:
-        '200':
-          description: Data info
-          content:
-            application/json:
-              schema: {}
-  /partition/<filename>/ratio/<ratio>:
-    get:
-      tags:
-        - PARTITION
-      operationId: partition.partition
-      description: Split up downloaded data
-      responses:
-        '200':
-          description: Split data into test and train sets
-          content:
-            application/json:
-              schema: {}
-  /test/get/data:
-    get:
-      tags:
-        - TEST
-      operationId: testdata.gettestdata
-      description: get test data
-      responses:
-        '200':
-          description: test data
-          content:
-            application/json:
-              schema: {}
-  /train/get/data:
-    get:
-      tags:
-        - TRAIN
-      operationId: traindata.gettraindata
-      description: get test data
-      responses:
-        '200':
-          description: train data
-          content:
-            application/json:
-              schema: {}
-  /experiment/svm:
-    get:
-      tags:
-        - SVM
-      operationId: svm.svm
-      description: perform svm
-      responses:
-        '200':
-          description: perform svm
-          content:
-            application/json:
-              schema: {}
   /experiment/svc/iris/C/<arg1>/kernel/<arg2>:
     get:
       tags:
