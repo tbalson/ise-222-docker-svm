@@ -1,6 +1,7 @@
-FROM ubuntu:latest
+FROM ubuntu:18.04
 MAINTAINER Tyler Balson <tbalson@iu.edu>
 
+ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update -y
 RUN apt-get install -y apt-utils
 
@@ -9,11 +10,10 @@ RUN apt-get install -y build-essential libssl-dev
 RUN apt-get install -y git-core
 RUN apt-get install -y dnsutils
 RUN apt-get install -y curl
-RUN apt install -y python3.7
+RUN apt-get install -y python3.7
 
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.7 10
 RUN update-alternatives --config python
-
 RUN apt-get install -y python3.7-distutils
 RUN apt-get install -y python3.7-dev
 
